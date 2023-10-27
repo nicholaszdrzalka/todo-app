@@ -1,11 +1,21 @@
+import React from 'react';
 import './App.css';
-import { TodoWrapper } from './components/TodoWrapper';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { Todo } from './pages/Todo';
+import { Calendar } from './pages/Calendar';
 
 function App() {
   return (
-    <div className="App">
-      <TodoWrapper />
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path='/Home' element={<Home />} />
+        <Route path='/Todo' element={<Todo />} />
+        <Route path='/Calendar' element={<Calendar />} />
+      </Routes>
+    </Router>
   );
 }
 
